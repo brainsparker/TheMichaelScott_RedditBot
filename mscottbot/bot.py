@@ -28,7 +28,7 @@ for c in reddit_bot.subreddit('test').comments():
     if (now - comment_time) > 600:
         continue
     else:
-	print(c.body)
+        print(c.body)
         for saying in inapprops:
             if saying.lower() in c.body.lower():
                 #Reply to user
