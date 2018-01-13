@@ -24,9 +24,9 @@ for c in comments:
     else:
         for saying in inapprops:
             if saying in c.body.lower():
-                'Reply to user
+                #Reply to user
                 c.reply("That's what she said!")
-                'Log details
+                #Log details
                 what_user = str(c.author)
                 what_comment = str(c.body)
                 cid = str(c.id)
