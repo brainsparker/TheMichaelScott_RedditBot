@@ -7,6 +7,9 @@ import time
 import os
 import requests
 
+comment_str = "[That's what she said!](https://media.giphy.com/media/5xtDarIX9MTLD1pMoXC/giphy.gif)    " +
+              "***" + 
+              "This bot is brought to you by u/caffeinatedmike"
 phrases_url = 'https://github.com/caffeinatedMike/TheMichaelScott_RedditBot/raw/master/mscottbot/phrases.txt'
 logging.basicConfig(filename="simplelog.log",  format='%(asctime)s %(levelname)s %(message)s',level=logging.INFO)
 
