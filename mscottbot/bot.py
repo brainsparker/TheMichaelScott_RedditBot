@@ -5,7 +5,7 @@ import random
 import logging
 import time
 import os
-import urllib2
+import requests
 
 phrases_url = 'https://github.com/caffeinatedMike/TheMichaelScott_RedditBot/raw/master/mscottbot/phrases.txt'
 logging.basicConfig(filename="simplelog.log",  format='%(asctime)s %(levelname)s %(message)s',level=logging.INFO)
@@ -17,7 +17,7 @@ reddit_bot = praw.Reddit(user_agent=os.environ['user_agent'],
 				      password=os.environ['password'])
 
 
-inapprops = list(urllib2.urlopen(phrases_url).read())
+inapprops = list(requests.get(phrases_url).text)
 now = int(time.time())
 comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
 for c in comments:
