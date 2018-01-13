@@ -20,12 +20,13 @@ reddit_bot = praw.Reddit(user_agent=os.environ['user_agent'],
 inapprops = requests.get(phrases_url).text.splitlines()
 #print(str(inapprops))
 now = int(time.time())
-comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
+subreddit = reddit_bot.subreddit('test')
+#comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
 print(str(len(comments)))
-for c in comments:
+for c in reddit_bot.subreddit('test').comments():
     print(c.body)
     comment_time = int(c.created_utc)
-    if (now - comment_time) > 600:
+    if (now - comment_time) > 3600:
         continue
     else:
         for saying in inapprops:
