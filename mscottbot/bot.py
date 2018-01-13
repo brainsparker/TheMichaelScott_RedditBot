@@ -21,8 +21,9 @@ inapprops = requests.get(phrases_url).text.splitlines()
 print(str(inapprops))
 now = int(time.time())
 comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
-print(str(comments))
+#print(str(comments))
 for c in comments:
+    print(c.body)
     comment_time = int(c.created_utc)
     if (now - comment_time) > 600:
         continue
