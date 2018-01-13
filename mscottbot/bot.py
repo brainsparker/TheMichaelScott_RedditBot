@@ -16,7 +16,7 @@ reddit_bot = praw.Reddit(user_agent=os.environ['user_agent'],
 
 inapprops = list(open('phrases.txt'))
 now = int(time.time())
-comments = reddit_bot.get_comments('DunderMifflin')
+comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
 for c in comments:
     comment_time = int(c.created_utc)
     if (now - comment_time) > 3600:
