@@ -7,8 +7,11 @@ import time
 import os
 import requests
 
-comment_str = ("[That's what she said!](https://media.giphy.com/media/5xtDarIX9MTLD1pMoXC/giphy.gif)    " + 
-               "***  This bot is brought to you by u/caffeinatedmike")
+comment_str = """
+[That's what she said!](https://media.giphy.com/media/5xtDarIX9MTLD1pMoXC/giphy.gif)  
+***
+^**Creator:** ^u/caffeinatedmike  ^| **^Contribute ^Here:** [^Github ^Repo](https://github.com/caffeinatedMike/TheMichaelScott_RedditBot)  ^| **^Donations:** ^All ^[Donations](https://github.com/caffeinatedMike/TheMichaelScott_RedditBot/blob/master/README.md) ^go ^to ^the ^Party ^Planning ^Committee 
+"""
 phrases_url = 'https://github.com/caffeinatedMike/TheMichaelScott_RedditBot/raw/master/mscottbot/phrases.txt'
 logging.basicConfig(filename="simplelog.log",  format='%(asctime)s %(levelname)s %(message)s',level=logging.INFO)
 
