@@ -17,7 +17,7 @@ reddit_bot = praw.Reddit(user_agent=os.environ['user_agent'],
 				      password=os.environ['password'])
 
 
-inapprops = list(requests.get(phrases_url).text)
+inapprops = requests.get(phrases_url).text.splitlines()
 now = int(time.time())
 comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
 for c in comments:
