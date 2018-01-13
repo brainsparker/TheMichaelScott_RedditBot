@@ -18,10 +18,10 @@ reddit_bot = praw.Reddit(user_agent=os.environ['user_agent'],
 
 
 inapprops = requests.get(phrases_url).text.splitlines()
-print(str(inapprops))
+#print(str(inapprops))
 now = int(time.time())
 comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
-#print(str(comments))
+print(str(len(comments)))
 for c in comments:
     print(c.body)
     comment_time = int(c.created_utc)
