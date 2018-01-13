@@ -24,13 +24,13 @@ subreddit = reddit_bot.subreddit('test')
 #comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
 #print(str(len(comments)))
 for c in reddit_bot.subreddit('test').comments():
-    print(c.body)
     comment_time = int(c.created_utc)
-    if (now - comment_time) > 3600:
+    if (now - comment_time) > 600:
         continue
     else:
+	print(c.body)
         for saying in inapprops:
-            if saying in c.body.lower():
+            if saying.lower() in c.body.lower():
                 #Reply to user
                 c.reply("That's what she said!")
                 #Log details
