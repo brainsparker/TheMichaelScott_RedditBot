@@ -22,7 +22,7 @@ inapprops = requests.get(phrases_url).text.splitlines()
 now = int(time.time())
 subreddit = reddit_bot.subreddit('test')
 #comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
-print(str(len(comments)))
+#print(str(len(comments)))
 for c in reddit_bot.subreddit('test').comments():
     print(c.body)
     comment_time = int(c.created_utc)
