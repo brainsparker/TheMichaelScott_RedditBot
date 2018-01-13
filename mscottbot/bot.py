@@ -4,6 +4,7 @@ import praw
 import random
 import logging
 import time
+import os
 
 logging.basicConfig(filename="simplelog.log",  format='%(asctime)s %(levelname)s %(message)s',level=logging.INFO)
 
@@ -19,7 +20,7 @@ now = int(time.time())
 comments = reddit_bot.get_comments('test') #reddit_bot.get_comments('DunderMifflin')
 for c in comments:
     comment_time = int(c.created_utc)
-    if (now - comment_time) > 3600:
+    if (now - comment_time) > 600:
         continue
     else:
         for saying in inapprops:
