@@ -34,7 +34,7 @@ for c in reddit_bot.subreddit('test').comments():
         for saying in inapprops:
             if saying.lower() in c.body.lower():
                 #Reply to user
-                c.reply("That's what she said!")
+                c.reply(comment_str)
                 #Log details
                 what_user = str(c.author)
                 what_comment = str(c.body)
