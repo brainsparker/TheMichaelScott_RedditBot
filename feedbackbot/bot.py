@@ -29,8 +29,8 @@ for submission in reddit_bot.subreddit('feedback').new():
         print('OP is ' + op)
         noncontributor = True
         for comment in reddit_bot.redditor(op).comments.new(limit=None):
-            print('comment subreddit : %s'%comment.subreddit
-            if comment.subreddit == 'feedback':
+            print('comment subreddit : %s' % str(comment.subreddit))
+            if str(comment.subreddit) == 'feedback':
                 noncontributor = False
                 break
         if noncontributor:
