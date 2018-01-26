@@ -26,7 +26,7 @@ for submission in reddit_bot.subreddit('feedback').new():
         break
     else:
         op = reddit_bot.submission.author
-	print('OP is ' + op)
+        print('OP is ' + op)
         noncontributor = True
         for comment in reddit_bot.redditor(op).comments.new(limit=None):
             print('comment subreddit : %s'%comment.subreddit
